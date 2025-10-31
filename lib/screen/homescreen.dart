@@ -5,8 +5,6 @@ import 'package:bankapp/widget/statscard.dart';
 import 'package:bankapp/widget/summary_card.dart';
 import 'package:flutter/material.dart';
 
-
-
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
 
@@ -34,7 +32,6 @@ class _HomescreenState extends State<Homescreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                // Left text
                 RichText(
                   text: TextSpan(
                     children: [
@@ -113,89 +110,87 @@ class _HomescreenState extends State<Homescreen> {
           ),
         ),
       ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: HomePageProperties.kPaddingHorizontal,
-            vertical: HomePageProperties.kPaddingVertical,
-          ),
-          child: Column(
-            children: [
-              RevenueSummary(
-                title: "Available to withdraw",
-                amount: '\$9,476.00',
-                changeValue: '+\$48.2',
-                changeLabel: 'this week.',
-              ),
-              SizedBox(height: 32),
-              GridView.count(
-                physics: NeverScrollableScrollPhysics(),
-                childAspectRatio: 16 / 11,
-                shrinkWrap: true,
-                crossAxisCount: 2,
-                mainAxisSpacing: 12,
-                crossAxisSpacing: 12,
-                children: [
-                  StatCard(
-                    title: 'Orders',
-                    value: '314',
-                    changeText: '+23',
-                    subText: 'this week',
-                    shouldApplyBorder: false,
-                  ),
-                  StatCard(
-                    title: 'Gross profit',
-                    value: '\$824.00',
-                    changeText: '-\$42.2',
-                    subText: 'this week',
-                    shouldApplyBorder: false,
-                  ),
-                  StatCard(
-                    shouldApplyBorder: false,
-                    title: 'Orders',
-                    value: '\$0.00',
-                  ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: HomePageProperties.kPaddingHorizontal,
+          vertical: HomePageProperties.kPaddingVertical,
+        ),
+        child: Column(
+          children: [
+            RevenueSummary(
+              title: "Available to withdraw",
+              amount: '\$9,476.00',
+              changeValue: '+\$48.2',
+              changeLabel: 'this week.',
+            ),
+            SizedBox(height: 32),
+            GridView.count(
+              physics: NeverScrollableScrollPhysics(),
+              childAspectRatio: 16 / 11,
+              shrinkWrap: true,
+              crossAxisCount: 2,
+              mainAxisSpacing: 12,
+              crossAxisSpacing: 12,
+              children: [
+                StatCard(
+                  title: 'Orders',
+                  value: '314',
+                  changeText: '+23',
+                  subText: 'this week',
+                  shouldApplyBorder: false,
+                ),
+                StatCard(
+                  title: 'Gross profit',
+                  value: '\$824.00',
+                  changeText: '-\$42.2',
+                  subText: 'this week',
+                  shouldApplyBorder: false,
+                ),
+                StatCard(
+                  shouldApplyBorder: false,
+                  title: 'Orders',
+                  value: '\$0.00',
+                ),
 
-                  StatCard(
-                    title: 'Next payout',
-                    value: 'July 16',
-                    shouldApplyBorder: true,
-                    backgroundColor: Color(0xFFF5FFDC),
+                StatCard(
+                  title: 'Next payout',
+                  value: 'July 16',
+                  shouldApplyBorder: true,
+                  backgroundColor: Color(0xFFF5FFDC),
+                ),
+              ],
+            ),
+            SizedBox(height: 32),
+            const SimpleLineChart(),
+            SizedBox(height: 32),
+            Row(
+              children: [
+                Expanded(
+                  child: SummaryCard(
+                    value: '50+',
+                    label: 'Orders to fulfill',
+                    icon: Icons.inventory,
                   ),
-                ],
-              ),
-              SizedBox(height: 32),
-              const SimpleLineChart(),
-              SizedBox(height: 32),
-              Row(
-                children: [
-                  Expanded(
-                    child: SummaryCard(
-                      value: '50+',
-                      label: 'Orders to fulfill',
-                      icon: Icons.inventory,
-                    ),
+                ),
+                SizedBox(width: 12),
+                Expanded(
+                  child: SummaryCard(
+                    value: '4',
+                    label: 'High risk orders',
+                    icon: Icons.inventory,
                   ),
-                  SizedBox(width: 12),
-                  Expanded(
-                    child: SummaryCard(
-                      value: '4',
-                      label: 'High risk orders',
-                      icon: Icons.inventory,
-                    ),
+                ),
+                SizedBox(width: 12),
+                Expanded(
+                  child: SummaryCard(
+                    value: '50+',
+                    label: 'Chargebacks',
+                    icon: Icons.inventory,
                   ),
-                  SizedBox(width: 12),
-                  Expanded(
-                    child: SummaryCard(
-                      value: '50+',
-                      label: 'Chargebacks',
-                      icon: Icons.inventory,
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

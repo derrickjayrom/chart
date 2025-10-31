@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   final int currentIndex;
   final Function(int) onTap;
 
@@ -11,6 +11,11 @@ class BottomNavBar extends StatelessWidget {
     required this.onTap,
   });
 
+  @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     final items = [
@@ -39,8 +44,8 @@ class BottomNavBar extends StatelessWidget {
         'type': 'svg',
       },
       {
-        'outline': 'assets/icons/avatar.png', 
-        'active': 'assets/icons/avatar.png', 
+        'outline': 'assets/icons/avatar.png',
+        'active': 'assets/icons/avatar.png',
         'label': 'Profile',
         'type': 'png',
       },
@@ -55,11 +60,11 @@ class BottomNavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(items.length, (index) {
-          final isActive = currentIndex == index;
+          final isActive = widget.currentIndex == index;
           final item = items[index];
 
           return GestureDetector(
-            onTap: () => onTap(index),
+            onTap: () => widget.onTap(index),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
