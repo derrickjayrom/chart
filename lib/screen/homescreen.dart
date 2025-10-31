@@ -5,8 +5,7 @@ import 'package:bankapp/widget/statscard.dart';
 import 'package:bankapp/widget/summary_card.dart';
 import 'package:flutter/material.dart';
 
-const double kPaddingHorizontal = 24;
-const double kPaddingVertical = 32;
+
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -20,7 +19,7 @@ class _HomescreenState extends State<Homescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.kscaffoldBackgroundColor,
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         scrolledUnderElevation: 0,
@@ -59,7 +58,6 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                 ),
 
-                // Optional right bell icon
                 Container(
                   height: 32,
                   width: 32,
@@ -118,8 +116,8 @@ class _HomescreenState extends State<Homescreen> {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
-            horizontal: kPaddingHorizontal,
-            vertical: kPaddingVertical,
+            horizontal: HomePageProperties.kPaddingHorizontal,
+            vertical: HomePageProperties.kPaddingVertical,
           ),
           child: Column(
             children: [
@@ -131,6 +129,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
               SizedBox(height: 32),
               GridView.count(
+                physics: NeverScrollableScrollPhysics(),
                 childAspectRatio: 16 / 11,
                 shrinkWrap: true,
                 crossAxisCount: 2,

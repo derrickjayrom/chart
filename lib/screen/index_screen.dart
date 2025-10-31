@@ -33,12 +33,9 @@ class _IndexScreenState extends State<IndexScreen> {
         ],
       ),
 
-      bottomNavigationBar: SafeArea(
-        top: false,
-        child: BottomNavBar(
-          currentIndex: currentIndex,
-          onTap: (index) => setState(() => currentIndex = index),
-        ),
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index),
       ),
     );
   }

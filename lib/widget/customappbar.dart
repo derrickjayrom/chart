@@ -1,15 +1,5 @@
+import 'package:bankapp/utils/app_colors.dart';
 import 'package:flutter/material.dart';
-
-const Color kNotificationCount = Color(0xFFF5FFDC);
-const double kNotificationCountPositiontop = -10;
-const double kNotificationCountPositionright = -5;
-const double kNotificationCountHeight = 22;
-const double kNotificationCountWidth = 22;
-const double kNotificationCountRadius = 99;
-
-const double kNotificationBtnHeight = 36;
-const double kNotificationBtnWidth = 36;
-const double kNotificationBtnRadius = 12;
 
 class CustomAppbar extends StatefulWidget {
   const CustomAppbar({super.key});
@@ -93,10 +83,12 @@ class _NotificationIconState extends State<NotificationIcon> {
         GestureDetector(
           onTap: widget.onTap,
           child: Container(
-            height: kNotificationBtnHeight,
-            width: kNotificationBtnWidth,
+            height: AppBarProperties.kNotificationBtnHeight,
+            width: AppBarProperties.kNotificationBtnWidth,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(kNotificationBtnRadius),
+              borderRadius: BorderRadius.circular(
+                AppBarProperties.kNotificationBtnRadius,
+              ),
               border: Border.all(color: const Color(0xFFF2F2F2), width: 2),
             ),
             child: const Icon(Icons.notifications_none_rounded, size: 20),
@@ -104,14 +96,16 @@ class _NotificationIconState extends State<NotificationIcon> {
         ),
         if (widget.notificationCount > 0)
           Positioned(
-            top: kNotificationCountPositiontop,
-            right: kNotificationCountPositionright,
+            top: AppBarProperties.kNotificationCountPositiontop,
+            right: AppBarProperties.kNotificationCountPositionright,
             child: Container(
-              height: kNotificationCountHeight,
-              width: kNotificationCountWidth,
+              height: AppBarProperties.kNotificationCountHeight,
+              width: AppBarProperties.kNotificationCountWidth,
               decoration: BoxDecoration(
-                color: kNotificationCount,
-                borderRadius: BorderRadius.circular(kNotificationCountRadius),
+                color: AppBarProperties.kNotificationCount,
+                borderRadius: BorderRadius.circular(
+                  AppBarProperties.kNotificationCountRadius,
+                ),
                 border: Border.all(color: Colors.white, width: 1),
               ),
               child: Center(
