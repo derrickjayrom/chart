@@ -6,7 +6,7 @@ class SummaryCard extends StatefulWidget {
   final String label;
   final IconData? icon;
   final VoidCallback? onTap;
-  final double gap; 
+  final double gap;
 
   const SummaryCard({
     super.key,
@@ -14,7 +14,7 @@ class SummaryCard extends StatefulWidget {
     required this.label,
     this.icon,
     this.onTap,
-    this.gap = 6, 
+    this.gap = 6,
   });
 
   @override
@@ -35,7 +35,7 @@ class _SummaryCardState extends State<SummaryCard> {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.04),
+              color: Colors.black.withValues(alpha: .04),
               blurRadius: 6,
               offset: const Offset(0, 2),
             ),

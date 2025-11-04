@@ -1,7 +1,7 @@
 import 'package:bankapp/utils/app_colors.dart';
+import 'package:bankapp/widget/newstatcard.dart';
 import 'package:bankapp/widget/revenuesummary.dart';
 import 'package:bankapp/widget/simplelinechart.dart';
-import 'package:bankapp/widget/statscard.dart';
 import 'package:bankapp/widget/summary_card.dart';
 import 'package:flutter/material.dart';
 
@@ -90,6 +90,7 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                           ),
                           child: Center(
+                            child: Text('2'),
                             // child: Text(
                             //   userProvider.notificationModel!.totalNotifications
                             //       .toString(),
@@ -116,53 +117,101 @@ class _HomescreenState extends State<Homescreen> {
           vertical: HomePageProperties.kPaddingVertical,
         ),
         child: Column(
+          spacing: 32,
           children: [
             RevenueSummary(
-              title: "Available to withdraw",
+              title: "Total revenue (USB)",
               amount: '\$9,476.00',
               changeValue: '+\$48.2',
               changeLabel: 'this week.',
             ),
-            SizedBox(height: 32),
-            GridView.count(
-              physics: NeverScrollableScrollPhysics(),
-              childAspectRatio: 16 / 11,
-              shrinkWrap: true,
-              crossAxisCount: 2,
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
+            Column(
+              spacing: 12,
               children: [
-                StatCard(
-                  title: 'Orders',
-                  value: '314',
-                  changeText: '+23',
-                  subText: 'this week',
-                  shouldApplyBorder: false,
+                Row(
+                  spacing: 12,
+                  children: [
+                    Expanded(
+                      child: Newstatcard(
+                        title: 'Orders',
+                        value: '314',
+                        changeText: '+23',
+                        subText: 'this week',
+                        shouldApplyBorder: false,
+                      ),
+                    ),
+                    Expanded(
+                      child: Newstatcard(
+                        title: 'Gross Profit',
+                        value: '\$824.00',
+                        shouldApplyBorder: false,
+                        changeText: '+\$42.2',
+                        subText: 'this week',
+                      ),
+                    ),
+                  ],
                 ),
-                StatCard(
-                  title: 'Gross profit',
-                  value: '\$824.00',
-                  changeText: '-\$42.2',
-                  subText: 'this week',
-                  shouldApplyBorder: false,
-                ),
-                StatCard(
-                  shouldApplyBorder: false,
-                  title: 'Orders',
-                  value: '\$0.00',
-                ),
-
-                StatCard(
-                  title: 'Next payout',
-                  value: 'July 16',
-                  shouldApplyBorder: true,
-                  backgroundColor: Color(0xFFF5FFDC),
+                Row(
+                  spacing: 12,
+                  children: [
+                    Expanded(
+                      child: Newstatcard(
+                        title: 'Orders',
+                        value: '\$0.00',
+                        shouldApplyBorder: false,
+                      ),
+                    ),
+                    Expanded(
+                      child: Newstatcard(
+                        title: 'Next payout',
+                        value: 'July 16',
+                        shouldApplyBorder: true,
+                        backgroundColor: const Color(0xFFF5FFDC),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-            SizedBox(height: 32),
+
+            // GridView.count(
+            //   physics: NeverScrollableScrollPhysics(),
+            //   childAspectRatio: 16 / 11,
+            //   shrinkWrap: true,
+            //   crossAxisCount: 2,
+            //   mainAxisSpacing: 12,
+            //   crossAxisSpacing: 12,
+            //   children: [
+            //     StatCard(
+            //       title: 'Orders',
+            //       value: '314',
+            //       changeText: '+23',
+            //       subText: 'this week',
+            //       shouldApplyBorder: false,
+            //     ),
+            //     StatCard(
+            //       title: 'Gross profit',
+            //       value: '\$824.00',
+            //       changeText: '-\$42.2',
+            //       subText: 'this week',
+            //       shouldApplyBorder: false,
+            //     ),
+            //     StatCard(
+            //       shouldApplyBorder: false,
+            //       title: 'Orders',
+            //       value: '\$0.00',
+            //     ),
+
+            //     StatCard(
+            //       title: 'Next payout',
+            //       value: 'July 16',
+            //       shouldApplyBorder: true,
+            //       backgroundColor: Color(0xFFF5FFDC),
+            //     ),
+            //   ],
+            // ),
             const SimpleLineChart(),
-            SizedBox(height: 32),
+
             Row(
               children: [
                 Expanded(

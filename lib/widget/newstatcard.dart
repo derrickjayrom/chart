@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class StatCard extends StatefulWidget {
+class Newstatcard extends StatefulWidget {
   final String title;
   final String value;
   final String? changeText;
@@ -10,27 +10,29 @@ class StatCard extends StatefulWidget {
   final VoidCallback? onTap;
   final bool shouldApplyBorder;
 
-  const StatCard({
+  const Newstatcard({
     super.key,
     required this.title,
     required this.value,
     this.changeText,
     this.subText,
     this.backgroundColor,
-    this.onTap,
     this.borderColor,
+    this.onTap,
     required this.shouldApplyBorder,
   });
 
   @override
-  State<StatCard> createState() => _StatCardState();
+  State<Newstatcard> createState() => _NewstatcardState();
 }
 
-class _StatCardState extends State<StatCard> {
+class _NewstatcardState extends State<Newstatcard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.only(left: 16, top: 16, right: 16),
+      width: 171,
+      height: 90,
       decoration: BoxDecoration(
         color: widget.backgroundColor ?? Colors.white,
         border: widget.shouldApplyBorder == true
@@ -39,64 +41,54 @@ class _StatCardState extends State<StatCard> {
                 width: 2,
               )
             : Border.all(width: 0, color: Colors.transparent),
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 6,
-            offset: const Offset(0, 2),
-          ),
-        ],
+        borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+
         children: [
           Text(
             widget.title,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 13,
               color: Colors.black54,
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 6),
           Text(
             widget.value,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 18,
-              fontWeight: FontWeight.w700,
               color: Colors.black,
+              fontWeight: FontWeight.w700,
             ),
           ),
           if (widget.changeText != null || widget.subText != null)
-            Padding(
-              padding: const EdgeInsets.only(top: 4),
-              child: Row(
-                children: [
-                  if (widget.changeText != null)
-                    Text(
-                      widget.changeText!,
+            Row(
+              spacing: 4,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                if (widget.changeText != null)
+                  Text(
+                    widget.changeText!,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFFFF2C5E),
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                if (widget.subText != null)
+                  Expanded(
+                    child: Text(
+                      widget.subText!,
                       style: const TextStyle(
                         fontSize: 12,
-                        color: Colors.red,
-                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF8A8A8A),
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                  if (widget.subText != null)
-                    Padding(
-                      padding: const EdgeInsets.only(left: 4),
-                      child: Text(
-                        widget.subText!,
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Color(0xFF8A8A8A),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                ],
-              ),
+                  ),
+              ],
             ),
         ],
       ),

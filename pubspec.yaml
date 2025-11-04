@@ -29,3 +29,9 @@ flutter:
       fonts:
         - asset: assets/fonts/MyCustomFont-Bold.ttf
           weight: 700
+        - asset: assets/fonts/MyCustomFont-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/MyCustomFont-Medium.ttf
+          weight: 300
+        - asset: assets/fonts/MyCustomFont-Italic.ttf
+          style: italic
