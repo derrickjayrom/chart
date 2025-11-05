@@ -98,7 +98,6 @@ class _HomescreenState extends State<Homescreen> {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                           
                           ),
                         ),
                       ),
