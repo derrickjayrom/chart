@@ -90,7 +90,14 @@ class _HomescreenState extends State<Homescreen> {
                             ),
                           ),
                           child: Center(
-                            child: Text('2'),
+                            child: Text(
+                              '2',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 10,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
                             // child: Text(
                             //   userProvider.notificationModel!.totalNotifications
                             //       .toString(),
@@ -173,69 +180,19 @@ class _HomescreenState extends State<Homescreen> {
                 ),
               ],
             ),
-
-            // GridView.count(
-            //   physics: NeverScrollableScrollPhysics(),
-            //   childAspectRatio: 16 / 11,
-            //   shrinkWrap: true,
-            //   crossAxisCount: 2,
-            //   mainAxisSpacing: 12,
-            //   crossAxisSpacing: 12,
-            //   children: [
-            //     StatCard(
-            //       title: 'Orders',
-            //       value: '314',
-            //       changeText: '+23',
-            //       subText: 'this week',
-            //       shouldApplyBorder: false,
-            //     ),
-            //     StatCard(
-            //       title: 'Gross profit',
-            //       value: '\$824.00',
-            //       changeText: '-\$42.2',
-            //       subText: 'this week',
-            //       shouldApplyBorder: false,
-            //     ),
-            //     StatCard(
-            //       shouldApplyBorder: false,
-            //       title: 'Orders',
-            //       value: '\$0.00',
-            //     ),
-
-            //     StatCard(
-            //       title: 'Next payout',
-            //       value: 'July 16',
-            //       shouldApplyBorder: true,
-            //       backgroundColor: Color(0xFFF5FFDC),
-            //     ),
-            //   ],
-            // ),
             const SimpleLineChart(),
-
             Row(
               children: [
                 Expanded(
-                  child: SummaryCard(
-                    value: '50+',
-                    label: 'Orders to fulfill',
-                    icon: Icons.inventory,
-                  ),
+                  child: SummaryCard(value: '50+', label: 'Orders to fulfill'),
                 ),
                 SizedBox(width: 12),
                 Expanded(
-                  child: SummaryCard(
-                    value: '4',
-                    label: 'High risk orders',
-                    icon: Icons.inventory,
-                  ),
+                  child: SummaryCard(value: '4', label: 'High risk orders'),
                 ),
                 SizedBox(width: 12),
                 Expanded(
-                  child: SummaryCard(
-                    value: '50+',
-                    label: 'Chargebacks',
-                    icon: Icons.inventory,
-                  ),
+                  child: SummaryCard(value: '50+', label: 'Chargebacks'),
                 ),
               ],
             ),

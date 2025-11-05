@@ -55,7 +55,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: const BoxDecoration(
         color: Colors.white,
-        border: Border(top: BorderSide(color: Color(0xFFE5E5E5))),
+        border: Border(top: BorderSide(color: Color(0xFFF2F2F2))),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

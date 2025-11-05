@@ -26,6 +26,7 @@ class _RevenueSummaryState extends State<RevenueSummary> {
     return Container(
       color: Color(0xFFFBFBFB),
       child: Column(
+        spacing: 4,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -38,17 +39,16 @@ class _RevenueSummaryState extends State<RevenueSummary> {
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 8),
           Text(
             widget.amount,
             style: const TextStyle(
-              fontSize: 38,
-              fontWeight: FontWeight.w800,
+              fontSize: 40,
+              fontWeight: FontWeight.w700,
               color: Colors.black,
             ),
           ),
-          const SizedBox(height: 6),
           Row(
+            spacing: 4,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -56,10 +56,9 @@ class _RevenueSummaryState extends State<RevenueSummary> {
                 style: TextStyle(
                   fontSize: 14,
                   color: widget.changeColor,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
-              const SizedBox(width: 4),
               Text(
                 widget.changeLabel,
                 style: const TextStyle(
