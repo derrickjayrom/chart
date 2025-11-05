@@ -20,32 +20,32 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     final items = [
       {
-        'outline': 'assets/icons/home.svg',
-        'active': 'assets/icons/home_active.svg',
+        'outline': 'assets/icons/svgs/home.svg',
+        'active': 'assets/icons/svgs/home_active.svg',
         'label': 'Home',
         'type': 'svg',
       },
       {
-        'outline': 'assets/icons/wallet.svg',
+        'outline': 'assets/icons/svgs/wallet.svg',
         'active': 'assets/icons/wallet_active.svg',
         'label': 'Withdrawals',
         'type': 'svg',
       },
       {
-        'outline': 'assets/icons/store.svg',
+        'outline': 'assets/icons/svgs/store.svg',
         'active': 'assets/icons/store_active.svg',
         'label': 'Stores',
         'type': 'svg',
       },
       {
-        'outline': 'assets/icons/credit_card.svg',
+        'outline': 'assets/icons/svgs/credit_card.svg',
         'active': 'assets/icons/credit_card_active.svg',
         'label': 'Cards',
         'type': 'svg',
       },
       {
-        'outline': 'assets/icons/avatar.png',
-        'active': 'assets/icons/avatar.png',
+        'outline': 'assets/icons/pngs/avatar.png',
+        'active': 'assets/icons/pngs/avatar.png',
         'label': 'Profile',
         'type': 'png',
       },

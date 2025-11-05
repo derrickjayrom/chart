@@ -98,15 +98,7 @@ class _HomescreenState extends State<Homescreen> {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                            // child: Text(
-                            //   userProvider.notificationModel!.totalNotifications
-                            //       .toString(),
-                            //   style: TextStyle(
-                            //     color: Colors.black,
-                            //     fontSize: 10,
-                            //     fontWeight: FontWeight.bold,
-                            //   ),
-                            // ),
+                           
                           ),
                         ),
                       ),
